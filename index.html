@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>Play rock paper scissors via the console</p>
-
+    <div class="button-container">
+        <button onclick="playGame('rock')">Rock</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('scissors')">Scissors</button>
+    </div>
+    <div class ="round-result">
+        <p id="message-prompt"></p>
+    </div>
+    <div class ="score">
+        <p id="tally"></p>
+    </div>
     <script src="script.js">
         console.log('Hello from the script!');
     </script>
