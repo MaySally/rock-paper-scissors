@@ -1,92 +1,90 @@
-/* Apply a full height to the body and remove default margins */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    flex-direction: column;
+    background-color: lavenderblush;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-/* Center the container of buttons vertically and horizontally */
 .button-container {
     display: flex;
-    flex-direction: column;  /* Stack buttons vertically */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    gap: 20px; /* Adds space between buttons */
+    width: 100%;
+    max-width: 400px; /* Prevents container from getting too wide */
 }
 
-/* Style the buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #E0E7DA;
     border: none;
-    padding: 20px 40px;
-    font-size: 20px;
-    margin: 10px;
+    border-radius: 12px;
+    padding: 15px 30px; /* Increased padding for larger buttons */
     cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 200px;           /* Set a fixed width for all buttons */
+    transition: all 0.3s ease;
+    color: #2C3329;
+    font-size: 18px; /* Slightly larger font */
+    width: 100%; /* Makes buttons fill container width */
 }
 
-/* Button hover and active effects */
 button:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
+    background-color: #C1CCBA;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:active {
-    background-color: #388e3c;
+    background-color: #91998A;
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
-/* Style for round result container */
-.round-result {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin-bottom: 20px;
+button:focus {
+    background-color: #91998A;
+    outline: none;
 }
 
-/* Style for the message prompt */
-#message-prompt {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
+button:focus-visible {
+    outline: 2px solid #738069;
+    outline-offset: 2px;
+}
+/* Results Container Styling */
+.results-container {
+    display: flex;
+    display: none; /* Hide it by default */
+    flex-direction: column; /* Stack the result and score vertically */
+    justify-content: center; /* Center them vertically */
+    align-items: center; /* Center them horizontally */
+    background-color: lavenderblush; /* Soft lavender background */
+    border: 2px solid #A8BDB1; /* Soft sage border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Some space inside the container */
+    width: 80%; /* Control the width of the container */
+    margin: 20px auto; /* Center the container and add some space around it */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
-/* Style for the score container */
-.score {
-    background-color: #ffffff;
+/* Result and Score Styling (stacked vertically) */
+.result, .score {
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border-radius: 10px; /* Rounded corners for each box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    width: 80%; /* Full width inside container */
+    text-align: center; /* Center text inside */
+    margin: 10px 0; /* Add spacing between the boxes */
 }
 
-/* Style for the score text */
+/* Message Styling (Same for both) */
+#message-result, #tally {
+    font-weight: bold; /* Bold font */
+    color: #6A4E7E; /* Soft purple color for consistency */
+}
+
 #tally {
-    font-size: 20px;
-    color: #555;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
+    font-size: 16px;
 }
 
-/* Add some spacing between the buttons and result/score */
-.button-container, #round-result, #score {
-    margin-bottom: 20px;
-}
-
-/* Add a smooth transition effect when hovering over the result and score */
-#round-result:hover, #score:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+#message-result {
+    font-size: 24px;
 }

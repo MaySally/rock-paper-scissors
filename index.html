@@ -12,11 +12,14 @@
         <button onclick="playGame('paper')">Paper</button>
         <button onclick="playGame('scissors')">Scissors</button>
     </div>
-    <div class ="round-result">
-        <p id="message-prompt"></p>
-    </div>
-    <div class ="score">
-        <p id="tally"></p>
+    <div class="results-container"> 
+        <div class ="result">
+            <p id="message-result"></p>
+        </div>
+        <div class ="score">
+            <p id="tally"></p>
+        </div>
+        <button class="restart-button">Start Again</button>
     </div>
     <script src="script.js">
         console.log('Hello from the script!');
